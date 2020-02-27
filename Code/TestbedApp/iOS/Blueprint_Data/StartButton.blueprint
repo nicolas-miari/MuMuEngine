@@ -1,0 +1,81 @@
+{
+    "components": [
+        {
+            "type": "StateMachine",
+            "payload": {
+                "initialState": "Normal",
+                "states": {
+                    "Normal": {
+                        "sprite": "StartButtonNormal",
+                        "atlas": "BasicUserInterface",
+                        "eventHandlers": [
+                            {
+                                "event": {
+                                    "type": "pointInput",
+                                    "payload": { "input": "touchDown" }
+                                },
+                                "action": {
+                                    "type": "stateTransition",
+                                    "payload": { "destination": "Highlighted" }
+                                }
+                            },
+                            {
+                                "event": {
+                                    "type": "pointInput",
+                                    "payload": { "input": "dragEnter" }
+                                },
+                                "action": {
+                                    "type": "stateTransition",
+                                    "payload": { "destination": "Highlighted" }
+                                }
+                            }
+                        ]
+                    },
+
+                    "Highlighted": {
+                        "sprite": "StartButtonHighlighted",
+                        "atlas": "BasicUserInterface",
+                        "eventHandlers": [
+                            {
+                                "event": {
+                                    "type": "pointInput",
+                                    "payload": { "input": "touchUpInside" }
+                                },
+                                "action": {
+                                    "type": "sceneTransition",
+                                    "payload": { "destination": "Splash" }
+                                }
+                            },
+                            {
+                                "event": {
+                                    "type": "pointInput",
+                                    "payload": { "input": "touchUpInside" }
+                                },
+                                "action": {
+                                    "type": "stateTransition",
+                                    "payload": { "destination": "Normal" }
+                                }
+                            },
+                            {
+                                "event": {
+                                    "type": "pointInput",
+                                    "payload": { "input": "dragExit" }
+                                },
+                                "action": {
+                                    "type": "stateTransition",
+                                    "payload": { "destination": "Normal" }
+                                }
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "type": "HitBox",
+            "payload": {
+                "rect": [[-75, -30], [150, 60]]
+            }
+        }
+    ]
+}

@@ -1,0 +1,44 @@
+{
+    "components": [
+        {
+            "type": "StateMachine",
+            "payload": {
+                "states": {
+                    "Spinning": {
+                        "animation": "HeartSpinning",
+                        "eventHandlers": [
+                            {
+                                "event": {
+                                    "type": "animationComplete",
+                                    "payload": { "count": 10 }
+                                },
+                                "action": {
+                                    "type": "stateTransition",
+                                    "payload": {
+                                        "destination": "Sparkling"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    "Sparkling": {
+                        "animation": "HeartSparkling",
+                        "eventHandlers": [
+                            {
+                                "event": {
+                                    "type": "animationComplete",
+                                    "payload": { "count": 1 }
+                                },
+                                "action": {
+                                    "type": "removeNode",
+                                    "payload": {}
+                                }
+                            }
+                        ]
+                    }
+                },
+                "initialState": "Spinning"
+            }
+        }
+    ]
+}

@@ -1,0 +1,90 @@
+{
+    "name": "MainMenu",
+    "clearColor": {
+        "red": 1,
+        "green": 0.5,
+        "blue": 0.2,
+        "alpha": 1
+    },
+    "rootNode": {
+        "children": [
+            {
+                "name": "Start Button",
+                "localTransform": {
+                    "columns" : [
+                        [1, 0, 0, 0],
+                        [0, 1, 0, 0],
+                        [0, 0, 1, 0],
+                        [0, 0, 0, 1]
+                    ]
+                },
+                "blueprint": "StartButton"
+            },
+            {
+                "name": "Heart 00",
+                "localTransform": {
+                    "columns" : [
+                        [1, 0, 0, 0],
+                        [0, 1, 0, 0],
+                        [0, 0, 1, 0],
+                        [-220, 0, 0, 1]
+                    ]
+                },
+                "blueprint": "Heart"
+            },
+            {
+                "name": "Heart 01",
+                "localTransform": {
+                    "columns" : [
+                        [1, 0, 0, 0],
+                        [0, 1, 0, 0],
+                        [0, 0, 1, 0],
+                        [220, 0, 0, 1]
+                    ]
+                },
+                "blueprint": "Heart",
+                "timeOffset": 0.125
+            },
+            {
+                "name": "Heart 02",
+                "localTransform": {
+                    "columns" : [
+                        [1, 0, 0, 0],
+                        [0, 1, 0, 0],
+                        [0, 0, 1, 0],
+                        [0, -220, 0, 1]
+                    ]
+                },
+                "blueprint": "Heart",
+                "timeOffset": 0.25
+            },
+            {
+                "name": "Heart 03",
+                "localTransform": {
+                    "columns" : [
+                        [1, 0, 0, 0],
+                        [0, 1, 0, 0],
+                        [0, 0, 1, 0],
+                        [0, 220, 0, 1]
+                    ]
+                },
+                "blueprint": "Heart",
+                "timeOffset": 0.375
+            },
+            {
+                "name": "Blob",
+                "localTransform": {
+                    "columns" : [
+                        [1, 0, 0, 0],
+                        [0, 1, 0, 0],
+                        [0, 0, 1, 0],
+                        [120, 220, 0, 1]
+                    ]
+                },
+                "blueprint": "Blob",
+            }
+        ]
+    }
+}
+
+

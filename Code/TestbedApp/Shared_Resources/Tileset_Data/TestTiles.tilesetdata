@@ -1,0 +1,13 @@
+{
+    "tileSize": 64,
+
+    "tileAttributes": [
+        {
+            "index": 12,
+            "attributes": {
+                "test_attribute_0": "rtest_value_0",
+                "test_attribute_1": "rtest_value_1",
+            }
+        }
+    ]
+}

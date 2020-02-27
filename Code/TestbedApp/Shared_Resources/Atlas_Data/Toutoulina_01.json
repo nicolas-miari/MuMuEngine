@@ -1,0 +1,214 @@
+{
+  "sprites" : [
+    {
+      "rect" : [
+        [
+          0,
+          0
+        ],
+        [
+          180,
+          160
+        ]
+      ],
+      "name" : "07@2x.png",
+      "rotated" : false,
+      "opaque" : false
+    },
+    {
+      "rect" : [
+        [
+          0,
+          160
+        ],
+        [
+          150,
+          185
+        ]
+      ],
+      "name" : "06@2x.png",
+      "rotated" : true,
+      "opaque" : false
+    },
+    {
+      "rect" : [
+        [
+          180,
+          0
+        ],
+        [
+          160,
+          120
+        ]
+      ],
+      "name" : "08@2x.png",
+      "rotated" : false,
+      "opaque" : false
+    },
+    {
+      "rect" : [
+        [
+          340,
+          0
+        ],
+        [
+          100,
+          100
+        ]
+      ],
+      "name" : "Reference@2x.png",
+      "rotated" : false,
+      "opaque" : false
+    },
+    {
+      "rect" : [
+        [
+          180,
+          120
+        ],
+        [
+          100,
+          100
+        ]
+      ],
+      "name" : "OpaqueSprite@2x.png",
+      "rotated" : false,
+      "opaque" : true
+    },
+    {
+      "rect" : [
+        [
+          180,
+          220
+        ],
+        [
+          92.5,
+          80
+        ]
+      ],
+      "name" : "13@2x.png",
+      "rotated" : false,
+      "opaque" : false
+    },
+    {
+      "rect" : [
+        [
+          180,
+          300
+        ],
+        [
+          80,
+          80
+        ]
+      ],
+      "name" : "03@2x.png",
+      "rotated" : false,
+      "opaque" : false
+    },
+    {
+      "rect" : [
+        [
+          280,
+          120
+        ],
+        [
+          80,
+          80
+        ]
+      ],
+      "name" : "09@2x.png",
+      "rotated" : false,
+      "opaque" : false
+    },
+    {
+      "rect" : [
+        [
+          360,
+          120
+        ],
+        [
+          80,
+          75
+        ]
+      ],
+      "name" : "02@2x.png",
+      "rotated" : false,
+      "opaque" : false
+    },
+    {
+      "rect" : [
+        [
+          280,
+          200
+        ],
+        [
+          80,
+          75
+        ]
+      ],
+      "name" : "17@2x.png",
+      "rotated" : false,
+      "opaque" : false
+    },
+    {
+      "rect" : [
+        [
+          280,
+          275
+        ],
+        [
+          50,
+          80
+        ]
+      ],
+      "name" : "11@2x.png",
+      "rotated" : false,
+      "opaque" : false
+    },
+    {
+      "rect" : [
+        [
+          360,
+          200
+        ],
+        [
+          50,
+          80
+        ]
+      ],
+      "name" : "12@2x.png",
+      "rotated" : false,
+      "opaque" : false
+    },
+    {
+      "rect" : [
+        [
+          410,
+          200
+        ],
+        [
+          47.5,
+          75
+        ]
+      ],
+      "name" : "16@2x.png",
+      "rotated" : false,
+      "opaque" : false
+    },
+    {
+      "rect" : [
+        [
+          457.5,
+          200
+        ],
+        [
+          35,
+          67.5
+        ]
+      ],
+      "name" : "10@2x.png",
+      "rotated" : false,
+      "opaque" : false
+    }
+  ]
+}

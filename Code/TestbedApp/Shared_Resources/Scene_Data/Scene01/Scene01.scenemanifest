@@ -1,0 +1,14 @@
+{
+    "textureAtlasNames": [
+        "MapItems"
+    ],
+
+    "animationNames": [
+        "HeartSpinning",
+        "HeartSparkling"
+    ],
+
+    "blueprintNames": [
+        "Heart"
+    ]
+}

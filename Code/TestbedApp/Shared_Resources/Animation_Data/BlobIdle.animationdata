@@ -1,0 +1,29 @@
+{
+    "atlas": "Blob",
+
+    "sources": [
+        "Blob_Idle_01",
+        "Blob_Idle_02",
+        "Blob_Idle_03"
+    ],
+
+    "frames": [
+        {
+            "index": 0,
+            "duration": 0.125
+        },
+        {
+            "index": 1,
+            "duration": 0.125
+        },
+        {
+            "index": 2,
+            "duration": 0.125
+        },
+        {
+            "index": 1,
+            "duration": 0.125
+        }
+    ]
+}
+

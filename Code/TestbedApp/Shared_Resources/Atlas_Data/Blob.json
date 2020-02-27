@@ -1,0 +1,49 @@
+{
+  "sprites" : [
+    {
+      "rect" : [
+        [
+          0,
+          0
+        ],
+        [
+          92,
+          110
+        ]
+      ],
+      "name" : "Blob_Idle_01",
+      "rotated" : false,
+      "opaque" : false
+    },
+    {
+      "rect" : [
+        [
+          92,
+          0
+        ],
+        [
+          92,
+          110
+        ]
+      ],
+      "name" : "Blob_Idle_02",
+      "rotated" : false,
+      "opaque" : false
+    },
+    {
+      "rect" : [
+        [
+          184,
+          0
+        ],
+        [
+          92,
+          110
+        ]
+      ],
+      "name" : "Blob_Idle_03",
+      "rotated" : false,
+      "opaque" : false
+    }
+  ]
+}

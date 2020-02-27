@@ -1,0 +1,184 @@
+{
+  "sprites" : [
+    {
+      "rect" : [
+        [
+          0,
+          0
+        ],
+        [
+          33,
+          30
+        ]
+      ],
+      "name" : "HeartSpinning_5",
+      "rotated" : false,
+      "opaque" : false
+    },
+    {
+      "rect" : [
+        [
+          33,
+          0
+        ],
+        [
+          35,
+          28
+        ]
+      ],
+      "name" : "HeartSpinning_0",
+      "rotated" : false,
+      "opaque" : false
+    },
+    {
+      "rect" : [
+        [
+          33,
+          28
+        ],
+        [
+          31,
+          28
+        ]
+      ],
+      "name" : "HeartSpinning_1",
+      "rotated" : false,
+      "opaque" : false
+    },
+    {
+      "rect" : [
+        [
+          68,
+          0
+        ],
+        [
+          25,
+          30
+        ]
+      ],
+      "name" : "HeartSpinning_2",
+      "rotated" : false,
+      "opaque" : false
+    },
+    {
+      "rect" : [
+        [
+          93,
+          0
+        ],
+        [
+          24,
+          30
+        ]
+      ],
+      "name" : "HeartSpinning_4",
+      "rotated" : false,
+      "opaque" : false
+    },
+    {
+      "rect" : [
+        [
+          68,
+          30
+        ],
+        [
+          35,
+          11
+        ]
+      ],
+      "name" : "HeartSparkling_0",
+      "rotated" : false,
+      "opaque" : false
+    },
+    {
+      "rect" : [
+        [
+          68,
+          41
+        ],
+        [
+          30,
+          12
+        ]
+      ],
+      "name" : "HeartSpinning_3",
+      "rotated" : true,
+      "opaque" : false
+    },
+    {
+      "rect" : [
+        [
+          103,
+          30
+        ],
+        [
+          17,
+          18
+        ]
+      ],
+      "name" : "HeartSparkling_1",
+      "rotated" : false,
+      "opaque" : false
+    },
+    {
+      "rect" : [
+        [
+          103,
+          48
+        ],
+        [
+          12,
+          11
+        ]
+      ],
+      "name" : "HeartSparkling_4",
+      "rotated" : false,
+      "opaque" : false
+    },
+    {
+      "rect" : [
+        [
+          115,
+          48
+        ],
+        [
+          7,
+          16
+        ]
+      ],
+      "name" : "HeartSparkling_2",
+      "rotated" : false,
+      "opaque" : false
+    },
+    {
+      "rect" : [
+        [
+          122,
+          48
+        ],
+        [
+          6,
+          11
+        ]
+      ],
+      "name" : "HeartSparkling_5",
+      "rotated" : false,
+      "opaque" : false
+    },
+    {
+      "rect" : [
+        [
+          120,
+          30
+        ],
+        [
+          7,
+          9
+        ]
+      ],
+      "name" : "HeartSparkling_3",
+      "rotated" : true,
+      "opaque" : false
+    }
+  ]
+}

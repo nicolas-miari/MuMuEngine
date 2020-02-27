@@ -1,0 +1,49 @@
+{
+  "sprites" : [
+    {
+      "rect" : [
+        [
+          0,
+          0
+        ],
+        [
+          100,
+          40
+        ]
+      ],
+      "name" : "StartButtonHighlighted",
+      "rotated" : false,
+      "opaque" : false
+    },
+    {
+      "rect" : [
+        [
+          0,
+          40
+        ],
+        [
+          100,
+          40
+        ]
+      ],
+      "name" : "StartButtonHover",
+      "rotated" : false,
+      "opaque" : false
+    },
+    {
+      "rect" : [
+        [
+          0,
+          80
+        ],
+        [
+          100,
+          40
+        ]
+      ],
+      "name" : "StartButtonNormal",
+      "rotated" : false,
+      "opaque" : false
+    }
+  ]
+}

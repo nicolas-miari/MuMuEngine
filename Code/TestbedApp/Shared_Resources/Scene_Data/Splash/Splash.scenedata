@@ -1,0 +1,45 @@
+{
+    "name": "Splash",
+    "clearColor": {
+        "red": 0.1,
+        "green": 0.2,
+        "blue": 1,
+        "alpha": 1
+    },
+    "rootNode": {
+        "name": "Root",
+        "children": [
+            {
+                "name": "Heart 01",
+                "localTransform": {
+                    "columns" : [
+                        [1, 0, 0, 0],
+                        [0, 1, 0, 0],
+                        [0, 0, 1, 0],
+                        [0, 0, 0, 1]
+                    ]
+                },
+                "blueprint": "IntroHeart"
+            }
+        ],
+        "components": [
+            {
+                "type": "HitBox",
+                "payload": {
+                }
+            }
+        ],
+        "eventHandlers": [
+            {
+                "event": {
+                    "type": "pointInput",
+                    "payload": { "input": "touchDown" }
+                },
+                "action": {
+                    "type": "sceneTransition",
+                    "payload": { "destination": "MainMenu" }
+                }
+            }
+        ]
+    }
+}

@@ -1,0 +1,18 @@
+{
+    "components": [
+        {
+            "type": "StateMachine",
+            "payload": {
+                "initialState": "Idle",
+                "states": {
+                    "Idle": {
+                        "animation": "BlobIdle",
+                        "eventHandlers": [
+                        ]
+                    }
+                }
+            }
+        }
+
+    ]
+}

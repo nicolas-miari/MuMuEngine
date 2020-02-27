@@ -1,0 +1,19 @@
+{
+    "textureAtlasNames": [
+        "BasicUserInterface",
+        "MapItems",
+        "Blob"
+    ],
+
+    "animationNames": [
+        "HeartSpinning",
+        "HeartSparkling",
+        "BlobIdle"
+    ],
+
+    "blueprintNames": [
+        "StartButton",
+        "Heart",
+        "Blob"
+    ]
+}
