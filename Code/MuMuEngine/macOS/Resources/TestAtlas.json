@@ -1,0 +1,8 @@
+{
+    textureName: "TestTexture",
+
+    metadata: {
+        "TestSprite01": [[0,0], [32, 64]],
+        "TestSprite02": [[32, 0], [32, 16]]
+    }
+}
