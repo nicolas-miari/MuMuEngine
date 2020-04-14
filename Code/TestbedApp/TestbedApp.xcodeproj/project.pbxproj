@@ -9,12 +9,8 @@
 /* Begin PBXBuildFile section */
 		1F8EA0A324078C07008921AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8EA0A224078C07008921AB /* AppDelegate.swift */; };
 		1F8EA0A724078C08008921AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F8EA0A624078C08008921AB /* Assets.xcassets */; };
-		1F8EA0C724078CD2008921AB /* MuMuEngine_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F8EA0C624078CD2008921AB /* MuMuEngine_macOS.framework */; };
-		1F8EA0C824078CD3008921AB /* MuMuEngine_macOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1F8EA0C624078CD2008921AB /* MuMuEngine_macOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1F8EA0D024078CFC008921AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8EA0CF24078CFC008921AB /* AppDelegate.swift */; };
 		1F8EA0D924078CFD008921AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F8EA0D824078CFD008921AB /* Assets.xcassets */; };
-		1F8EA0E224078D06008921AB /* MuMuEngine_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F8EA0E124078D06008921AB /* MuMuEngine_iOS.framework */; };
-		1F8EA0E324078D06008921AB /* MuMuEngine_iOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1F8EA0E124078D06008921AB /* MuMuEngine_iOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1F8EA1AE240791B6008921AB /* Shared.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F8EA1AD240791B6008921AB /* Shared.xcassets */; };
 		1F8EA1B0240791C0008921AB /* GameInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1F8EA1AF240791C0008921AB /* GameInfo.plist */; };
 		1F8EA1B2240791D6008921AB /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8EA1B1240791D6008921AB /* WindowController.swift */; };
@@ -63,27 +59,33 @@
 		1F8EA2202407AB3C008921AB /* Blob.blueprint in Resources */ = {isa = PBXBuildFile; fileRef = 1F8EA20D2407AB3C008921AB /* Blob.blueprint */; };
 		1F8EA2212407AB3C008921AB /* IntroHeart.blueprint in Resources */ = {isa = PBXBuildFile; fileRef = 1F8EA20E2407AB3C008921AB /* IntroHeart.blueprint */; };
 		1F8EA2232407AB4D008921AB /* StartButton.blueprint in Resources */ = {isa = PBXBuildFile; fileRef = 1F8EA2222407AB4D008921AB /* StartButton.blueprint */; };
+		1F9FD725243E14E10066EADF /* GameConfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 1F9FD724243E14E10066EADF /* GameConfiguration.json */; };
+		1FCB4B282440406600144F81 /* GameConfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 1FCB4B272440406600144F81 /* GameConfiguration.json */; };
+		1FD2C2B6244075D900FF671F /* MuMuEngine_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FD2C2B5244075D900FF671F /* MuMuEngine_iOS.framework */; };
+		1FD2C2B7244075D900FF671F /* MuMuEngine_iOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1FD2C2B5244075D900FF671F /* MuMuEngine_iOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1FD2C2B8244078DA00FF671F /* MuMuEngine_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F8F9A1724406CA600E79EEE /* MuMuEngine_macOS.framework */; };
+		1FD2C2B9244078DA00FF671F /* MuMuEngine_macOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1F8F9A1724406CA600E79EEE /* MuMuEngine_macOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		1F8EA0C524078C51008921AB /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				1F8EA0C824078CD3008921AB /* MuMuEngine_macOS.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		1F8EA0E424078D06008921AB /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				1F8EA0E324078D06008921AB /* MuMuEngine_iOS.framework in Embed Frameworks */,
+				1FD2C2B7244075D900FF671F /* MuMuEngine_iOS.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1FD2C2BA244078DA00FF671F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				1FD2C2B9244078DA00FF671F /* MuMuEngine_macOS.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -95,12 +97,10 @@
 		1F8EA0A224078C07008921AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1F8EA0A624078C08008921AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1F8EA0AB24078C08008921AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1F8EA0C624078CD2008921AB /* MuMuEngine_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MuMuEngine_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F8EA0CD24078CFC008921AB /* TestBedApp-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TestBedApp-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F8EA0CF24078CFC008921AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1F8EA0D824078CFD008921AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1F8EA0DD24078CFD008921AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1F8EA0E124078D06008921AB /* MuMuEngine_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MuMuEngine_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F8EA1AD240791B6008921AB /* Shared.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Shared.xcassets; path = Shared_Resources/Shared.xcassets; sourceTree = SOURCE_ROOT; };
 		1F8EA1AF240791C0008921AB /* GameInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = GameInfo.plist; sourceTree = "<group>"; };
 		1F8EA1B1240791D6008921AB /* WindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
@@ -123,7 +123,7 @@
 		1F8EA1CD240791F2008921AB /* Heart.blueprint */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Heart.blueprint; sourceTree = "<group>"; };
 		1F8EA1CE240791F2008921AB /* Blob.blueprint */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Blob.blueprint; sourceTree = "<group>"; };
 		1F8EA1CF240791F2008921AB /* IntroHeart.blueprint */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = IntroHeart.blueprint; sourceTree = "<group>"; };
-		1F8EA1E324079207008921AB /* StartButton.blueprint */ = {isa = PBXFileReference; lastKnownFileType = file; name = StartButton.blueprint; path = macOS/Blueprint_Data/StartButton.blueprint; sourceTree = SOURCE_ROOT; };
+		1F8EA1E324079207008921AB /* StartButton.blueprint */ = {isa = PBXFileReference; lastKnownFileType = text; name = StartButton.blueprint; path = macOS/Blueprint_Data/StartButton.blueprint; sourceTree = SOURCE_ROOT; };
 		1F8EA1E624079234008921AB /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		1F8EA1E82407926E008921AB /* TestbedApp.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = TestbedApp.entitlements; sourceTree = "<group>"; };
 		1F8EA1EA2407AAFB008921AB /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -149,7 +149,11 @@
 		1F8EA20C2407AB3C008921AB /* Heart.blueprint */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Heart.blueprint; sourceTree = "<group>"; };
 		1F8EA20D2407AB3C008921AB /* Blob.blueprint */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Blob.blueprint; sourceTree = "<group>"; };
 		1F8EA20E2407AB3C008921AB /* IntroHeart.blueprint */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = IntroHeart.blueprint; sourceTree = "<group>"; };
-		1F8EA2222407AB4D008921AB /* StartButton.blueprint */ = {isa = PBXFileReference; lastKnownFileType = file; name = StartButton.blueprint; path = iOS/Blueprint_Data/StartButton.blueprint; sourceTree = SOURCE_ROOT; };
+		1F8EA2222407AB4D008921AB /* StartButton.blueprint */ = {isa = PBXFileReference; lastKnownFileType = text; name = StartButton.blueprint; path = iOS/Blueprint_Data/StartButton.blueprint; sourceTree = SOURCE_ROOT; };
+		1F8F9A1724406CA600E79EEE /* MuMuEngine_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MuMuEngine_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F9FD724243E14E10066EADF /* GameConfiguration.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GameConfiguration.json; sourceTree = "<group>"; };
+		1FCB4B272440406600144F81 /* GameConfiguration.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GameConfiguration.json; sourceTree = "<group>"; };
+		1FD2C2B5244075D900FF671F /* MuMuEngine_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MuMuEngine_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,7 +161,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F8EA0C724078CD2008921AB /* MuMuEngine_macOS.framework in Frameworks */,
+				1FD2C2B8244078DA00FF671F /* MuMuEngine_macOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,7 +169,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F8EA0E224078D06008921AB /* MuMuEngine_iOS.framework in Frameworks */,
+				1FD2C2B6244075D900FF671F /* MuMuEngine_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,6 +202,7 @@
 				1F8EA1E82407926E008921AB /* TestbedApp.entitlements */,
 				1F8EA0AB24078C08008921AB /* Info.plist */,
 				1F8EA1AF240791C0008921AB /* GameInfo.plist */,
+				1F9FD724243E14E10066EADF /* GameConfiguration.json */,
 				1F8EA0A624078C08008921AB /* Assets.xcassets */,
 				1F8EA1AD240791B6008921AB /* Shared.xcassets */,
 				1F8EA1B1240791D6008921AB /* WindowController.swift */,
@@ -210,8 +215,8 @@
 		1F8EA0C224078C50008921AB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1F8EA0E124078D06008921AB /* MuMuEngine_iOS.framework */,
-				1F8EA0C624078CD2008921AB /* MuMuEngine_macOS.framework */,
+				1FD2C2B5244075D900FF671F /* MuMuEngine_iOS.framework */,
+				1F8F9A1724406CA600E79EEE /* MuMuEngine_macOS.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -222,6 +227,7 @@
 				1F8EA0CF24078CFC008921AB /* AppDelegate.swift */,
 				1F8EA0DD24078CFD008921AB /* Info.plist */,
 				1F8EA1EC2407AAFB008921AB /* GameInfo.plist */,
+				1FCB4B272440406600144F81 /* GameConfiguration.json */,
 				1F8EA0D824078CFD008921AB /* Assets.xcassets */,
 				1F8EA1F02407AB0C008921AB /* Shared.xcassets */,
 				1F8EA1E92407AAFB008921AB /* Storyboards */,
@@ -287,9 +293,9 @@
 		1F8EA1C1240791F2008921AB /* Scene_Data */ = {
 			isa = PBXGroup;
 			children = (
+				1F8EA1C8240791F2008921AB /* README.md */,
 				1F8EA1C5240791F2008921AB /* Scene01 */,
 				1F8EA1C2240791F2008921AB /* Splash */,
-				1F8EA1C8240791F2008921AB /* README.md */,
 				1F8EA1C9240791F2008921AB /* MainMenu */,
 			);
 			name = Scene_Data;
@@ -467,7 +473,7 @@
 				1F8EA09B24078C07008921AB /* Sources */,
 				1F8EA09C24078C07008921AB /* Frameworks */,
 				1F8EA09D24078C07008921AB /* Resources */,
-				1F8EA0C524078C51008921AB /* Embed Frameworks */,
+				1FD2C2BA244078DA00FF671F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -503,7 +509,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1130;
-				LastUpgradeCheck = 1130;
+				LastUpgradeCheck = 1140;
 				ORGANIZATIONNAME = "Nicolás Miari";
 				TargetAttributes = {
 					1F8EA09E24078C07008921AB = {
@@ -543,6 +549,7 @@
 				1F8EA1D5240791F2008921AB /* Blob.json in Resources */,
 				1F8EA1E724079234008921AB /* Main.storyboard in Resources */,
 				1F8EA1D1240791F2008921AB /* HeartSparkling.animationdata in Resources */,
+				1F9FD725243E14E10066EADF /* GameConfiguration.json in Resources */,
 				1F8EA1D2240791F2008921AB /* HeartSpinning.animationdata in Resources */,
 				1F8EA1D8240791F2008921AB /* TestTiles.tilesetdata in Resources */,
 				1F8EA1DB240791F2008921AB /* Scene01.scenedata in Resources */,
@@ -589,6 +596,7 @@
 				1F8EA21A2407AB3C008921AB /* README.md in Resources */,
 				1F8EA2132407AB3C008921AB /* Blob.json in Resources */,
 				1F8EA2112407AB3C008921AB /* HeartSpinning.animationdata in Resources */,
+				1FCB4B282440406600144F81 /* GameConfiguration.json in Resources */,
 				1F8EA2162407AB3C008921AB /* Splash.scenedata in Resources */,
 				1F8EA21C2407AB3C008921AB /* MainMenu.scenemanifest in Resources */,
 				1F8EA1EF2407AAFB008921AB /* GameInfo.plist in Resources */,
@@ -738,6 +746,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = macOS/TestbedApp.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 0.0.1;
@@ -761,6 +770,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = macOS/TestbedApp.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 0.0.1;

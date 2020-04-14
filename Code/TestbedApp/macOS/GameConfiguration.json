@@ -1,0 +1,5 @@
+{
+    "initialSceneName": "Splash",
+    "windowSize": [640, 480],
+    "graphicsApiName": "Metal"
+}

@@ -1,0 +1,1 @@
+We need a state machine that governes which sprite is displayed when.

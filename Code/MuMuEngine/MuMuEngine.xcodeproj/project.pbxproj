@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F7B334F2444474000499C91 /* Promise+Catch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7B33472444474000499C91 /* Promise+Catch.swift */; };
+		1F7B33502444474000499C91 /* Promise+Then.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7B33482444474000499C91 /* Promise+Then.swift */; };
+		1F7B33512444474000499C91 /* Promise+Always.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7B33492444474000499C91 /* Promise+Always.swift */; };
+		1F7B33522444474000499C91 /* Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7B334A2444474000499C91 /* Promise.swift */; };
+		1F7B33532444474000499C91 /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7B334B2444474000499C91 /* Context.swift */; };
+		1F7B33542444474000499C91 /* Promise+State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7B334C2444474000499C91 /* Promise+State.swift */; };
+		1F7B33552444474000499C91 /* Promise+Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7B334D2444474000499C91 /* Promise+Observer.swift */; };
+		1F7B33562444474000499C91 /* Promise.md in Resources */ = {isa = PBXBuildFile; fileRef = 1F7B334E2444474000499C91 /* Promise.md */; };
 		1F8EA05D24078A7D008921AB /* MuMuEngine_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F8EA05324078A7D008921AB /* MuMuEngine_macOS.framework */; };
 		1F8EA06224078A7D008921AB /* MuMuEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8EA06124078A7D008921AB /* MuMuEngineTests.swift */; };
 		1F8EA06424078A7D008921AB /* MuMuEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F8EA05624078A7D008921AB /* MuMuEngine.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -111,6 +119,12 @@
 		1F8EA1AA24078FA6008921AB /* MetalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F8EA1A924078FA6008921AB /* MetalKit.framework */; };
 		1F8EA1AB24078FC4008921AB /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F8EA1A724078F9E008921AB /* Metal.framework */; platformFilter = ios; };
 		1F8EA1AC24078FCC008921AB /* MetalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F8EA1A924078FA6008921AB /* MetalKit.framework */; platformFilter = ios; };
+		1F8F9A0F24404DDF00E79EEE /* System.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8F9A0E24404DDF00E79EEE /* System.swift */; };
+		1F8F9A1024404F6800E79EEE /* System.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8F9A0E24404DDF00E79EEE /* System.swift */; };
+		1F8F9A12244058B300E79EEE /* GameConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8F9A11244058B300E79EEE /* GameConfiguration.swift */; };
+		1FCB4B2A244043E300144F81 /* Engine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCB4B29244043E300144F81 /* Engine.swift */; };
+		1FCB4B2B244043E300144F81 /* Engine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCB4B29244043E300144F81 /* Engine.swift */; };
+		1FD2C2B42440759000FF671F /* GameConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8F9A11244058B300E79EEE /* GameConfiguration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,6 +138,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1F7B33472444474000499C91 /* Promise+Catch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Promise+Catch.swift"; sourceTree = "<group>"; };
+		1F7B33482444474000499C91 /* Promise+Then.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Promise+Then.swift"; sourceTree = "<group>"; };
+		1F7B33492444474000499C91 /* Promise+Always.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Promise+Always.swift"; sourceTree = "<group>"; };
+		1F7B334A2444474000499C91 /* Promise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Promise.swift; sourceTree = "<group>"; };
+		1F7B334B2444474000499C91 /* Context.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Context.swift; sourceTree = "<group>"; };
+		1F7B334C2444474000499C91 /* Promise+State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Promise+State.swift"; sourceTree = "<group>"; };
+		1F7B334D2444474000499C91 /* Promise+Observer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Promise+Observer.swift"; sourceTree = "<group>"; };
+		1F7B334E2444474000499C91 /* Promise.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Promise.md; sourceTree = "<group>"; };
 		1F8EA05324078A7D008921AB /* MuMuEngine_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MuMuEngine_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F8EA05624078A7D008921AB /* MuMuEngine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MuMuEngine.h; sourceTree = "<group>"; };
 		1F8EA05724078A7D008921AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -188,6 +210,9 @@
 		1F8EA19F24078EEB008921AB /* SystemAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SystemAlert.swift; sourceTree = "<group>"; };
 		1F8EA1A724078F9E008921AB /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
 		1F8EA1A924078FA6008921AB /* MetalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalKit.framework; path = System/Library/Frameworks/MetalKit.framework; sourceTree = SDKROOT; };
+		1F8F9A0E24404DDF00E79EEE /* System.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = System.swift; sourceTree = "<group>"; };
+		1F8F9A11244058B300E79EEE /* GameConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameConfiguration.swift; sourceTree = "<group>"; };
+		1FCB4B29244043E300144F81 /* Engine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Engine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,6 +245,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F7B33462444470E00499C91 /* Asynchronous_Support */ = {
+			isa = PBXGroup;
+			children = (
+				1F7B334E2444474000499C91 /* Promise.md */,
+				1F7B334A2444474000499C91 /* Promise.swift */,
+				1F7B334B2444474000499C91 /* Context.swift */,
+				1F7B33492444474000499C91 /* Promise+Always.swift */,
+				1F7B33472444474000499C91 /* Promise+Catch.swift */,
+				1F7B334D2444474000499C91 /* Promise+Observer.swift */,
+				1F7B334C2444474000499C91 /* Promise+State.swift */,
+				1F7B33482444474000499C91 /* Promise+Then.swift */,
+			);
+			path = Asynchronous_Support;
+			sourceTree = "<group>";
+		};
 		1F8EA04924078A7D008921AB = {
 			isa = PBXGroup;
 			children = (
@@ -278,6 +318,9 @@
 		1F8EA0E824078E62008921AB /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				1FCB4B29244043E300144F81 /* Engine.swift */,
+				1F8F9A0E24404DDF00E79EEE /* System.swift */,
+				1F8F9A11244058B300E79EEE /* GameConfiguration.swift */,
 				1F8EA0FC24078E62008921AB /* Runtime.swift */,
 				1F8EA0FB24078E62008921AB /* Runtime+PlayerInput.swift */,
 				1F8EA0FA24078E62008921AB /* Game.swift */,
@@ -290,6 +333,7 @@
 				1F8EA11B24078E62008921AB /* Color.swift */,
 				1F8EA10924078E62008921AB /* PointInput.swift */,
 				1F8EA0FE24078E62008921AB /* Container.swift */,
+				1F7B33462444470E00499C91 /* Asynchronous_Support */,
 				1F8EA0E924078E62008921AB /* Event_Action_Model */,
 				1F8EA0ED24078E62008921AB /* Display_Hierarchy */,
 				1F8EA0FF24078E62008921AB /* Math */,
@@ -316,9 +360,9 @@
 			isa = PBXGroup;
 			children = (
 				1F8EA0EE24078E62008921AB /* Scene.swift */,
-				1F8EA0EF24078E62008921AB /* Node_Component_Model */,
 				1F8EA0F824078E62008921AB /* RenderSet.swift */,
 				1F8EA0F924078E62008921AB /* Node.swift */,
+				1F8EA0EF24078E62008921AB /* Node_Component_Model */,
 			);
 			path = Display_Hierarchy;
 			sourceTree = "<group>";
@@ -327,8 +371,8 @@
 			isa = PBXGroup;
 			children = (
 				1F8EA0F024078E62008921AB /* Animation.swift */,
-				1F8EA0F124078E62008921AB /* Components */,
 				1F8EA0F724078E62008921AB /* Blueprint.swift */,
+				1F8EA0F124078E62008921AB /* Components */,
 			);
 			path = Node_Component_Model;
 			sourceTree = "<group>";
@@ -337,8 +381,8 @@
 			isa = PBXGroup;
 			children = (
 				1F8EA0F224078E62008921AB /* ComponentProtocol.swift */,
-				1F8EA0F324078E62008921AB /* StateMachine */,
 				1F8EA0F624078E62008921AB /* HitBoxComponent.swift */,
+				1F8EA0F324078E62008921AB /* StateMachine */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -604,6 +648,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F7B33562444474000499C91 /* Promise.md in Resources */,
 				1F8EA1A224078EEB008921AB /* Main.storyboard in Resources */,
 				1F8EA15E24078E62008921AB /* README.md in Resources */,
 				1F8EA1A024078EEB008921AB /* TestAtlas.json in Resources */,
@@ -635,12 +680,14 @@
 			files = (
 				1F8EA13A24078E62008921AB /* Runtime+PlayerInput.swift in Sources */,
 				1F8EA12624078E62008921AB /* Scene.swift in Sources */,
+				1F7B33502444474000499C91 /* Promise+Then.swift in Sources */,
 				1F8EA13024078E62008921AB /* HitBoxComponent.swift in Sources */,
 				1F8EA14824078E62008921AB /* Codable+Extensions.swift in Sources */,
 				1F8EA12024078E62008921AB /* Event.swift in Sources */,
 				1F8EA13E24078E62008921AB /* Time.swift in Sources */,
 				1F8EA13C24078E62008921AB /* Runtime.swift in Sources */,
 				1F8EA13824078E62008921AB /* Game.swift in Sources */,
+				1F7B33542444474000499C91 /* Promise+State.swift in Sources */,
 				1F8EA13624078E62008921AB /* Node.swift in Sources */,
 				1F8EA1A524078EEB008921AB /* SystemAlert.swift in Sources */,
 				1F8EA15424078E62008921AB /* Platform.swift in Sources */,
@@ -655,12 +702,17 @@
 				1F8EA17424078E62008921AB /* Renderer.swift in Sources */,
 				1F8EA12824078E62008921AB /* Animation.swift in Sources */,
 				1F8EA16E24078E62008921AB /* Color.swift in Sources */,
+				1F7B33522444474000499C91 /* Promise.swift in Sources */,
+				1F8F9A12244058B300E79EEE /* GameConfiguration.swift in Sources */,
+				1F7B33552444474000499C91 /* Promise+Observer.swift in Sources */,
 				1F8EA17224078E62008921AB /* TextureAtlas.swift in Sources */,
 				1F8EA16424078E62008921AB /* MetalTileSet.swift in Sources */,
 				1F8EA15824078E62008921AB /* MetalTextureAtlas.swift in Sources */,
 				1F8EA16824078E62008921AB /* Transition.swift in Sources */,
 				1F8EA15624078E62008921AB /* MetalRenderer.swift in Sources */,
 				1F8EA15C24078E62008921AB /* MTLClearColor+Extensions.swift in Sources */,
+				1F7B33512444474000499C91 /* Promise+Always.swift in Sources */,
+				1F8F9A0F24404DDF00E79EEE /* System.swift in Sources */,
 				1F8EA15224078E62008921AB /* PointInput.swift in Sources */,
 				1F8EA16C24078E62008921AB /* RuntimeError.swift in Sources */,
 				1F8EA14E24078E62008921AB /* GraphicsAPI.swift in Sources */,
@@ -670,15 +722,18 @@
 				1F8EA13224078E62008921AB /* Blueprint.swift in Sources */,
 				1F8EA14424078E62008921AB /* Matrix.swift in Sources */,
 				1F8EA15A24078E62008921AB /* Shaders.metal in Sources */,
+				1FCB4B2A244043E300144F81 /* Engine.swift in Sources */,
 				1F8EA14224078E62008921AB /* Easing.swift in Sources */,
 				1F8EA16624078E62008921AB /* MetalGraphicsAPI.swift in Sources */,
 				1F8EA12224078E62008921AB /* EventHandler.swift in Sources */,
 				1F8EA17024078E62008921AB /* TileSet.swift in Sources */,
 				1F8EA12E24078E62008921AB /* StateMachineComponent.swift in Sources */,
+				1F7B33532444474000499C91 /* Context.swift in Sources */,
 				1F8EA14024078E62008921AB /* Container.swift in Sources */,
 				1F8EA16024078E62008921AB /* MetalUtilities.swift in Sources */,
 				1F8EA15024078E62008921AB /* Bootstrap.swift in Sources */,
 				1F8EA16224078E62008921AB /* MetalTexturedMesh.swift in Sources */,
+				1F7B334F2444474000499C91 /* Promise+Catch.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -698,6 +753,7 @@
 				1F8EA12724078E62008921AB /* Scene.swift in Sources */,
 				1F8EA13124078E62008921AB /* HitBoxComponent.swift in Sources */,
 				1F8EA14924078E62008921AB /* Codable+Extensions.swift in Sources */,
+				1FD2C2B42440759000FF671F /* GameConfiguration.swift in Sources */,
 				1F8EA12124078E62008921AB /* Event.swift in Sources */,
 				1F8EA13F24078E62008921AB /* Time.swift in Sources */,
 				1F8EA13D24078E62008921AB /* Runtime.swift in Sources */,
@@ -710,6 +766,7 @@
 				1F8EA12524078E62008921AB /* Action.swift in Sources */,
 				1F8EA16B24078E62008921AB /* Vertex.swift in Sources */,
 				1F8EA14B24078E62008921AB /* CGGeometry+Extensions.swift in Sources */,
+				1F8F9A1024404F6800E79EEE /* System.swift in Sources */,
 				1F8EA12B24078E62008921AB /* ComponentProtocol.swift in Sources */,
 				1F8EA14724078E62008921AB /* Array+Extensions.swift in Sources */,
 				1F8EA17524078E62008921AB /* Renderer.swift in Sources */,
@@ -717,6 +774,7 @@
 				1F8EA16F24078E62008921AB /* Color.swift in Sources */,
 				1F8EA17324078E62008921AB /* TextureAtlas.swift in Sources */,
 				1F8EA16524078E62008921AB /* MetalTileSet.swift in Sources */,
+				1FCB4B2B244043E300144F81 /* Engine.swift in Sources */,
 				1F8EA15924078E62008921AB /* MetalTextureAtlas.swift in Sources */,
 				1F8EA19424078EDC008921AB /* MainView.swift in Sources */,
 				1F8EA16924078E62008921AB /* Transition.swift in Sources */,
@@ -875,7 +933,8 @@
 		1F8EA06824078A7D008921AB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 0.0.1;
 				DEFINES_MODULE = YES;
@@ -890,9 +949,11 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MARKETING_VERSION = 0.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nicolasmiari.MuMuEngine-macOS";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 			};
@@ -901,7 +962,8 @@
 		1F8EA06924078A7D008921AB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 0.0.1;
 				DEFINES_MODULE = YES;
@@ -916,9 +978,11 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MARKETING_VERSION = 0.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nicolasmiari.MuMuEngine-macOS";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 			};
@@ -984,6 +1048,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1011,6 +1076,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;

@@ -72,14 +72,12 @@ struct SceneManifest: Codable {
 
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-
-        do {
+        //do {
             self.textureAtlasNames = (try container.decodeIfPresent([String].self, forKey: .textureAtlasNames)) ?? []
             self.animationNames = (try container.decodeIfPresent([String].self, forKey: .animationNames)) ?? []
             self.blueprintNames = (try container.decodeIfPresent([String].self, forKey: .blueprintNames)) ?? []
-        } catch {
-            throw error
-        }
+        //} catch {
+        //    throw error
+        //} // (for debugging)
     }
 }
-

@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import MuMuEngine
+@testable import MuMuEngine_macOS
 
 class MuMuEngineTests: XCTestCase {
 

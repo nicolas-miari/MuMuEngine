@@ -18,11 +18,10 @@ public class MainView: NSView {
 
     // MARK: - Mouse Input
 
-    // Based on: https://stackoverflow.com/a/41878227/433373
     var trackingArea : NSTrackingArea?
 
-    // Based on: https://stackoverflow.com/a/41878227/433373
     override public func updateTrackingAreas() {
+        // (Based on: https://stackoverflow.com/a/41878227/433373)
         if trackingArea != nil {
             self.removeTrackingArea(trackingArea!)
         }
