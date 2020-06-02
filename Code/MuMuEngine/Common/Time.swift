@@ -16,6 +16,8 @@ class TimeSource {
     private var machToMilliseconds: Double
     private var lastMachTime: UInt64
 
+    // MARK: - Initialization
+
     init() {
         var timebase: mach_timebase_info_data_t = mach_timebase_info_data_t()
         mach_timebase_info(&timebase)
@@ -23,6 +25,8 @@ class TimeSource {
         self.lastMachTime = mach_absolute_time()
     }
 
+    // MARK: - Operation
+    
     /**
      Returns the time ellapsed since the last time the method was called. Call
      once on each invocation of the vSync callback and use the returned interval

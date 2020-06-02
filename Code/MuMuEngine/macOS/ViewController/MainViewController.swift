@@ -15,10 +15,10 @@ public class MainViewController: NSViewController {
 
     override public var preferredContentSize: NSSize {
         set {
-            // Ignore
+            // (ignore)
         }
         get {
-            return Runtime.shared.viewSize
+            return Engine.shared.viewSize
         }
     }
 
@@ -29,19 +29,12 @@ public class MainViewController: NSViewController {
 
     public override func viewWillAppear() {
         super.viewWillAppear()
-
-        guard let scaleFactor = view.window?.backingScaleFactor else {
-            fatalError("Window Unavailable")
-        }
         do {
-            try Runtime.start(options: [.scaleFactor: scaleFactor], failureHandler: {(error) in
-                NSAlert(error: error).runModal()
-            })
-
-            let graphicsView = Runtime.shared.view
+            try Engine.start()
+            let graphicsView = Engine.shared.view
             graphicsView.displayIfNeeded()
-            
             self.view.addSubview(graphicsView)
+
         } catch {
             NSAlert(error: error).runModal()
         }

@@ -27,7 +27,8 @@ public final class Runtime {
      */
     let graphicsAPI: GraphicsAPI
 
-    /***/
+    /**
+     */
     let timeSource: TimeSource
 
     /**
@@ -39,7 +40,6 @@ public final class Runtime {
 
     /**
      Shortcut to `view.size`, in logical units (points).
-     - seealso: `view`.
      */
     var viewSize: CGSize {
         return view.bounds.size

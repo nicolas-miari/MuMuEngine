@@ -11,8 +11,9 @@ import Foundation
 /**
  Master object of the event-action model.
 
- Each node in a scene contains zero or more event handlers. When a specific event is triggered, all event handlers that
- 'listen' to that event are notified, and they perform their associated actions.
+ Each node in a scene contains zero or more event handlers. When a specific
+ event is triggered, all event handlers that 'listen' to that event are
+ notified, and they perform their associated actions.
  */
 struct EventHandler: Codable {
 

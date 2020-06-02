@@ -8,11 +8,20 @@
 
 import Foundation
 
-protocol Event: Codable, NamedType {
-}
+// MARK: - Common Protocol
 
-// MARK: - Animation Complete
+/**
+ Extends NamedType so that types adopting it can be conveniently encoded as
+ JSON.
+ */
+protocol Event: Codable, NamedType { }
 
+// MARK: - Event: Animation Complete
+
+/**
+ Used to signal the completion of a specific animation attached to some node's
+ state.
+ */
 struct AnimationCompleteEvent: Event {
 
     static let name: String = "animationComplete"
@@ -20,8 +29,11 @@ struct AnimationCompleteEvent: Event {
     let count: Int
 }
 
-// MARK: - Message Received
+// MARK: - Event: Message Received
 
+/**
+ Used for sending events between various objects/entities at runtime.
+ */
 struct MessageReceivedEvent: Event {
 
     static let name: String = "messageReceived"
@@ -29,11 +41,13 @@ struct MessageReceivedEvent: Event {
     let content: String
 }
 
-// MARK: - Point Input
+// MARK: - Event: Point Input
 
 /**
- Input that can be ascribed a specific location (point) on screen (this abstractly encpmpasses
- both mouse input and touch input).
+ Input that can be ascribed a specific location (or point) on screen.
+
+ This abstractly encompasses both **mouse** input (clicks) on macOS, and
+  **touch** input (taps) on iOS.
  */
 struct PointInputEvent: Event {
 

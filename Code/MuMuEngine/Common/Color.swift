@@ -8,6 +8,9 @@
 
 import Foundation
 
+/**
+ Platform-agnostic color type.
+ */
 public struct Color: Codable {
     let red: Double
     let green: Double
