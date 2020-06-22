@@ -49,7 +49,7 @@ class State: Codable {
             let handlers = try container.decodeIfPresent([EventHandler].self, forKey: .eventHandlers) ?? []
             self.eventHandlersByType = Dictionary.init(grouping: handlers, by: { $0.event.typeName })
 
-            let api = Runtime.shared.graphicsAPI
+            let api = Runtime.shared.graphics
 
             if container.contains(.animation) {
                 // RENDERS ANIMATION

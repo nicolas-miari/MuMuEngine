@@ -18,7 +18,8 @@ public class MainViewController: NSViewController {
             // (ignore)
         }
         get {
-            return Engine.shared.viewSize
+            //return Engine.shared.viewSize
+            return Runtime.shared.viewSize
         }
     }
 
@@ -30,8 +31,15 @@ public class MainViewController: NSViewController {
     public override func viewWillAppear() {
         super.viewWillAppear()
         do {
+            /*
             try Engine.start()
             let graphicsView = Engine.shared.view
+            graphicsView.displayIfNeeded()
+            self.view.addSubview(graphicsView)
+             */
+
+            try Runtime.start()
+            let graphicsView = Runtime.shared.view
             graphicsView.displayIfNeeded()
             self.view.addSubview(graphicsView)
 

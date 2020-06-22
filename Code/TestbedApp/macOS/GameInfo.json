@@ -1,0 +1,7 @@
+{
+    "initial_scene_name": "Splash",
+    "window_size": [640, 480],
+    "graphics_api": "metal",
+    "default_trasition_type": "sequential_fade",
+    "default_transition_duration": 0.5,
+}

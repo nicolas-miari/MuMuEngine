@@ -82,7 +82,7 @@ class Animation: Codable {
 
     // MARK: - Initialization Support
     
-    func assembleRuntimeResources(using api: GraphicsAPI = Runtime.shared.graphicsAPI) throws {
+    func assembleRuntimeResources(using api: GraphicsAPI = Runtime.shared.graphics) throws {
         self.frames = try frameDescriptors.map { (descriptor) -> AnimationFrame in
             let mesh = try api.spriteComponent(name: sourceNames[descriptor.index], inAtlas: atlasName)
             return AnimationFrame(mesh: mesh, duration: descriptor.duration)

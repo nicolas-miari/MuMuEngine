@@ -61,6 +61,7 @@
 		1F8EA2232407AB4D008921AB /* StartButton.blueprint in Resources */ = {isa = PBXBuildFile; fileRef = 1F8EA2222407AB4D008921AB /* StartButton.blueprint */; };
 		1F9FD725243E14E10066EADF /* GameConfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 1F9FD724243E14E10066EADF /* GameConfiguration.json */; };
 		1FCB4B282440406600144F81 /* GameConfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 1FCB4B272440406600144F81 /* GameConfiguration.json */; };
+		1FCE943B24A07BF200A010D6 /* GameInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 1FCE943A24A07BF200A010D6 /* GameInfo.json */; };
 		1FD2C2B6244075D900FF671F /* MuMuEngine_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FD2C2B5244075D900FF671F /* MuMuEngine_iOS.framework */; };
 		1FD2C2B7244075D900FF671F /* MuMuEngine_iOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1FD2C2B5244075D900FF671F /* MuMuEngine_iOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1FD2C2B8244078DA00FF671F /* MuMuEngine_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F8F9A1724406CA600E79EEE /* MuMuEngine_macOS.framework */; };
@@ -153,6 +154,7 @@
 		1F8F9A1724406CA600E79EEE /* MuMuEngine_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MuMuEngine_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F9FD724243E14E10066EADF /* GameConfiguration.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GameConfiguration.json; sourceTree = "<group>"; };
 		1FCB4B272440406600144F81 /* GameConfiguration.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GameConfiguration.json; sourceTree = "<group>"; };
+		1FCE943A24A07BF200A010D6 /* GameInfo.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GameInfo.json; sourceTree = "<group>"; };
 		1FD2C2B5244075D900FF671F /* MuMuEngine_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MuMuEngine_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -203,6 +205,7 @@
 				1F8EA0AB24078C08008921AB /* Info.plist */,
 				1F8EA1AF240791C0008921AB /* GameInfo.plist */,
 				1F9FD724243E14E10066EADF /* GameConfiguration.json */,
+				1FCE943A24A07BF200A010D6 /* GameInfo.json */,
 				1F8EA0A624078C08008921AB /* Assets.xcassets */,
 				1F8EA1AD240791B6008921AB /* Shared.xcassets */,
 				1F8EA1B1240791D6008921AB /* WindowController.swift */,
@@ -569,6 +572,7 @@
 				1F8EA1E2240791F2008921AB /* IntroHeart.blueprint in Resources */,
 				1F8EA0A724078C08008921AB /* Assets.xcassets in Resources */,
 				1F8EA1D0240791F2008921AB /* BlobIdle.animationdata in Resources */,
+				1FCE943B24A07BF200A010D6 /* GameInfo.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

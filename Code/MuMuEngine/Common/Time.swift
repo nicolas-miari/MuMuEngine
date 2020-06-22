@@ -8,10 +8,14 @@
 
 import Foundation
 
+protocol TimeSource {
+    func update() -> TimeInterval
+}
+
 /**
  Helps calculate the time ellapsed between screen refreshes.
  */
-class TimeSource {
+class SystemTimeSource: TimeSource {
 
     private var machToMilliseconds: Double
     private var lastMachTime: UInt64
@@ -46,5 +50,11 @@ class TimeSource {
         #endif
 
         return TimeInterval(deltaSeconds)
+    }
+}
+
+class EmptyTimesource: TimeSource {
+    func update() -> TimeInterval {
+        // (...crickets...)
     }
 }

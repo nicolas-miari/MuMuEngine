@@ -29,6 +29,10 @@ class MetalGraphicsAPI: NSObject, GraphicsAPI {
 
     var vSyncHandler: (() -> Void)?
 
+    var backingScaleFactor: CGFloat {
+        return scaleFactor
+    }
+
     let renderer: CombiningRenderer
 
     // MARK: - Private Properties
@@ -87,6 +91,21 @@ class MetalGraphicsAPI: NSObject, GraphicsAPI {
                 failure(error)
             }
         }
+    }
+
+    public func preloadSceneResources(from manifest: SceneManifest, bundle: Bundle) throws -> Promise<Void> {
+        let promise = Promise<Void>(in: .background) { [weak self](resolve, reject) in
+            do {
+                try self?.loadAtlases(names: manifest.textureAtlasNames, bundle: bundle)
+                try self?.loadAnimations(names: manifest.animationNames, bundle: bundle)
+                try self?.loadBlueprints(names: manifest.blueprintNames, bundle: bundle)
+
+                resolve(())
+            } catch {
+                reject(error)
+            }
+        }
+        return promise
     }
 
     func spriteComponent(name: String, inAtlas atlasName: String) throws -> TexturedMeshComponent {

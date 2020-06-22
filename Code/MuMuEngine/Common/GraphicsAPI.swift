@@ -32,6 +32,10 @@ protocol GraphicsAPI: AnyObject {
     var view: View { get }
 
     /**
+     */
+    var backingScaleFactor: CGFloat { get }
+
+    /**
      A block that is executed before each redraw, useful for synchronizing frame
      updates.
      */
@@ -42,6 +46,10 @@ protocol GraphicsAPI: AnyObject {
      assumed to be present in the bundle.
      */
     func preloadSceneResources(from manifest: SceneManifest, bundle: Bundle, completion: @escaping (() -> Void), failure: @escaping ((Error) -> Void)) -> Void
+
+    /**
+     */
+    func preloadSceneResources(from manifest: SceneManifest, bundle: Bundle) throws -> Promise<Void>
 
     /**
      Returns a mesh resource containing all necessary information to draw the
@@ -111,8 +119,14 @@ class EmptyGraphicsApi: GraphicsAPI {
 
     var vSyncHandler: (() -> Void)?
 
+    let backingScaleFactor: CGFloat = 1
+
     func preloadSceneResources(from manifest: SceneManifest, bundle: Bundle, completion: @escaping (() -> Void), failure: @escaping ((Error) -> Void)) {
         failure(EmptyGraphicsApiError.unimplemented)
+    }
+
+    func preloadSceneResources(from manifest: SceneManifest, bundle: Bundle) throws -> Promise<Void> {
+        throw EmptyGraphicsApiError.unimplemented
     }
 
     func spriteComponent(name: String, inAtlas atlasName: String) throws -> TexturedMeshComponent {

@@ -16,40 +16,28 @@ import GameKit
 public final class Runtime {
 
     /**
-     Shared Instance (singleton).
+     Non-optional, to avoid unwrapping overhead. However, the initial value is a
+     non-functional instance, and attmepting to use it will result in an error:
+     call `start()` first.
      */
-    private(set) public static var shared: Runtime!
+    private(set) public static var shared = Runtime()
 
     // Runtime Properties
 
-    /**
-     Graphics API abstraction.
-     */
-    let graphicsAPI: GraphicsAPI
+    let graphics: GraphicsAPI
 
-    /**
-     */
     let timeSource: TimeSource
 
-    /**
-     The operating system-provided view, where the game content is rendered.
-     */
     var view: View {
-        return graphicsAPI.view
+        return graphics.view
     }
 
-    /**
-     Shortcut to `view.size`, in logical units (points).
-     */
     var viewSize: CGSize {
         return view.bounds.size
     }
 
-    /**
-     TODO: Use actual value! Also consider moving to graphics API
-     */
     var scaleFactor: CGFloat {
-        return 2
+        return 2 // TODO: Use actual value! Also consider moving to graphics API
     }
 
     // TODO: Make configurable from init file
@@ -73,18 +61,31 @@ public final class Runtime {
      execution, leave empty and the default value of `nil` signals instantiating
      the API specified in the configuration file.
      */
-    init(api: GraphicsAPI) {
-        self.graphicsAPI = api
-        self.timeSource = TimeSource()
-
+    private init(api: GraphicsAPI, timeSource: TimeSource) {
+        self.graphics = api
+        self.timeSource = timeSource
         playerControllerStates[.player1] = PlayerControllerState()
     }
 
-    enum StartOptionsKey: String {
-        case customConfigurationFilePath
-        case overrideViewSize
+    private init() {
+        self.graphics = EmptyGraphicsApi()
+        self.timeSource = EmptyTimesource()
     }
 
+    static func start(options: GameConfiguration, ready: @escaping (() -> Void), failure: @escaping ((Error) -> Void)) throws {
+
+        let api = try options.createGraphicsApi()
+        let timeSource = options.createTimeSource()
+
+        self.shared = Runtime(api: api, timeSource: timeSource)
+
+        shared.registerCustomCoders()
+
+        // Attempt loading inital scene
+
+    }
+
+    /*
     static func start(options: [BootstrapOptionKey: Any]? = nil, readyHandler: (() -> Void)? = nil, failureHandler: @escaping ((Error) -> Void) = defaultFailureHandler) throws {
         let bootstrap = try Bootstrap(options: options)
 
@@ -106,100 +107,20 @@ public final class Runtime {
                 failureHandler(error)
             }
         })
-    }
+    }*/
 
-    // MARK: - Input (Mouse)
+    // MARK: - Hit Testing
 
-    private var lastNodeHit: Node?
-
-    func mouseMoved(to point: CGPoint) {
-        guard let target = currentScene.rootNode.hitTest(point: point) else {
-            return // Miss
-        }
-        if target != lastNodeHit {
-            // Notify exit:
-            lastNodeHit?.handlePointInput(.mouseExit)
-
-            // Notify enter:
-            target.handlePointInput(.mouseEnter)
-
-            // Update node:
-            self.lastNodeHit = target
-        }
-    }
-
-    func mouseDown(at point: CGPoint) {
-        guard let target = currentScene.rootNode.hitTest(point: point) else {
-            return // Miss
-        }
-        self.lastNodeHit = target
-        target.handlePointInput(.buttonDown)
-    }
-
-    func mouseUp(at point: CGPoint) {
-        guard let target = currentScene.rootNode.hitTest(point: point) else {
-            return // Miss
-        }
-        self.lastNodeHit = target
-
-        target.handlePointInput(.buttonUp)
-    }
-
-    func mouseDragged(to point: CGPoint) {
-        let target = currentScene.rootNode.hitTest(point: point)
-
-        if target != lastNodeHit {
-            lastNodeHit?.handlePointInput(.dragExit)
-            target?.handlePointInput(.dragEnter)
-
-            self.lastNodeHit = target
-        }
-    }
-
-    // MARK: - Input (Touch)
-
-    func touchBegan(at point: CGPoint) {
-        let target = currentScene.rootNode.hitTest(point: point)
-
-        target?.handlePointInput(.touchDown)
-
-        self.lastNodeHit = target
-    }
-
-    func touchMoved(to point: CGPoint) {
-        let target = currentScene.rootNode.hitTest(point: point)
-
-        if target != lastNodeHit {
-            lastNodeHit?.handlePointInput(.dragExit)
-            target?.handlePointInput(.dragEnter)
-        }
-
-        self.lastNodeHit = target
-    }
-
-    func touchEnded(at point: CGPoint) {
-        let target = currentScene.rootNode.hitTest(point: point)
-
-        if target != lastNodeHit {
-            lastNodeHit?.handlePointInput(.touchUpOutside)
-        } else {
-            lastNodeHit?.handlePointInput(.touchUpInside)
-        }
-        lastNodeHit = nil
-    }
-
-    // MARK: -
+    internal var lastNodeHit: Node?
 
     func hitTest(at point: CGPoint) {
         guard currentTransition == nil else {
             return
         }
-
         guard let target = currentScene.rootNode.hitTest(point: point) else {
             return // Miss
         }
-
-        target.instrinsicVisibility = !target.instrinsicVisibility
+        target.instrinsicVisibility = !target.instrinsicVisibility // ?
     }
 
     // MARK: - Scene Management
@@ -262,7 +183,7 @@ public final class Runtime {
     func run(_ scene: Scene) {
         self.currentScene = scene
 
-        graphicsAPI.vSyncHandler = { [unowned self] in
+        graphics.vSyncHandler = { [unowned self] in
             self.handleSceneUpdate()
         }
     }
@@ -271,7 +192,7 @@ public final class Runtime {
         let dt = timeSource.update()
 
         currentScene.rootNode.update(dt: dt)
-        graphicsAPI.render(currentScene.rootNode)
+        graphics.render(currentScene.rootNode)
     }
 
     func handleTransitionUpdate() {
@@ -297,15 +218,15 @@ public final class Runtime {
             // currentScene.rootNode from the next frame:
             self.currentTransition = nil
 
-            graphicsAPI.render(currentScene.rootNode)
+            graphics.render(currentScene.rootNode)
 
-            graphicsAPI.vSyncHandler = { [unowned self] in
+            graphics.vSyncHandler = { [unowned self] in
                 self.handleSceneUpdate()
             }
         } else {
             // Transition is ongoing...
 
-            graphicsAPI.render(transition)
+            graphics.render(transition)
         }
     }
 
@@ -318,7 +239,7 @@ public final class Runtime {
         self.nextScene = scene
         self.currentTransition = transition
 
-        graphicsAPI.vSyncHandler = { [unowned self] in
+        graphics.vSyncHandler = { [unowned self] in
             self.handleTransitionUpdate()
         }
     }
@@ -351,7 +272,7 @@ public final class Runtime {
 
     private func loadScene(name: String, bundle: Bundle = .main, completion: @escaping ((Scene) -> Void), failure: @escaping ((Error) -> Void) = defaultFailureHandler) {
         loadSceneManifest(name: name, bundle: bundle, completion: { [unowned self](manifest) in
-            self.graphicsAPI.preloadSceneResources(from: manifest, bundle: bundle, completion: { [unowned self] in
+            self.graphics.preloadSceneResources(from: manifest, bundle: bundle, completion: { [unowned self] in
 
                 // Load Scene Data Proper
                 guard let path = bundle.path(forResource: name, ofType: sceneDataFileExtension) else {

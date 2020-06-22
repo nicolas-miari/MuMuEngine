@@ -25,7 +25,7 @@ import Foundation
      }
 
  ...where the contents (and structure) of the dictionary `payload` vary
- depending on the actual type of component.
+ depending on the actual type of component (specificed by the `type` field).
 
  At runtime, when parsing the JSON, the block above is treated as a `Container`
  instance's worth of JSON and decoded accordingly. During decoding, the string
@@ -99,7 +99,7 @@ struct Container: Codable {
      itself).
      Similarly, when an object of type `A` needs to be serialized to JSON, a
      dictioary is produced with the value `typeName` under the key "type", and
-     the objects JSON representation under the key `payload`, so that its type
+     the object's JSON representation under the key `payload`, so that its type
      can be inferred in the future when decoded.
 
      - Parameters

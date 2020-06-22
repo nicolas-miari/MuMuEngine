@@ -132,7 +132,7 @@ public class Node: Codable, Equatable {
         self.worldTransform = .identity
 
         if container.contains(.blueprint) {
-            let api = Runtime.shared.graphicsAPI
+            let api = Runtime.shared.graphics
             let blueprintName = try container.decode(String.self, forKey: .blueprint)
             self.components = try api.componentsFromBlueprint(name: blueprintName)
 

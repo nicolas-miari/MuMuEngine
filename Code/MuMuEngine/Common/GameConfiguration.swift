@@ -14,10 +14,19 @@ import CoreGraphics
  */
 class GameConfiguration: Codable {
 
+    /**
+     The name of the first scene to load from the resources on app launch.
+     */
     let initialSceneName: String
 
+    /**
+     The (fixed) size of the app's window (macOS only: on iOS, games run full-screen).
+     */
     let windowSize: CGSize?
 
+    /**
+     Currently, only "Metal" is supported.
+     */
     let graphicsApiName: String
 
     // MARK: -
@@ -35,8 +44,10 @@ class GameConfiguration: Codable {
     func createGraphicsApi() throws -> GraphicsAPI {
         let screenSize: CGSize = try { () throws -> CGSize in
             if let size = System.viewNativeSize {
+                // (iOS)
                 return size
             } else if let size = windowSize {
+                // (macOS)
                 return size
             } else {
                 throw GameConfigurationError.windowSizeUnspecified
@@ -51,11 +62,22 @@ class GameConfiguration: Codable {
             throw GameConfigurationError.unsupportedGraphicsApi
         }
     }
+
+    func createTimeSource() -> TimeSource {
+        return SystemTimeSource()
+    }
 }
 
+// MARK: - Supporting Types
+
 enum GameConfigurationError: Error {
+    ///
     case defaultResourceFileMissing
+
+    ///
     case unsupportedGraphicsApi
+
+    ///
     case windowSizeUnspecified
 }
 
