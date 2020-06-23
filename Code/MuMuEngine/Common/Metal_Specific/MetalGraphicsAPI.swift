@@ -93,7 +93,7 @@ class MetalGraphicsAPI: NSObject, GraphicsAPI {
         }
     }
 
-    public func preloadSceneResources(from manifest: SceneManifest, bundle: Bundle) throws -> Promise<Void> {
+    public func preloadSceneResources(from manifest: SceneManifest, bundle: Bundle) -> Promise<Void> {
         let promise = Promise<Void>(in: .background) { [weak self](resolve, reject) in
             do {
                 try self?.loadAtlases(names: manifest.textureAtlasNames, bundle: bundle)

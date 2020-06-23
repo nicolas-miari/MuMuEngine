@@ -56,13 +56,6 @@ class SceneManager {
         })
     }*/
 
-    func loadScene(name: String, bundle: Bundle = .main, api: GraphicsAPI) {
-
-
-
-
-    }
-
     fileprivate func loadSceneManifest(name: String, bundle: Bundle = .main) -> Promise<SceneManifest> {
         let promise = Promise<SceneManifest>(in: .background) { (resolve, reject) in
             guard let path = bundle.path(forResource: name, ofType: sceneManifestFileExtension) else {

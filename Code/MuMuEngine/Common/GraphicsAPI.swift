@@ -49,7 +49,7 @@ protocol GraphicsAPI: AnyObject {
 
     /**
      */
-    func preloadSceneResources(from manifest: SceneManifest, bundle: Bundle) throws -> Promise<Void>
+    func preloadSceneResources(from manifest: SceneManifest, bundle: Bundle) -> Promise<Void>
 
     /**
      Returns a mesh resource containing all necessary information to draw the
@@ -125,8 +125,10 @@ class EmptyGraphicsApi: GraphicsAPI {
         failure(EmptyGraphicsApiError.unimplemented)
     }
 
-    func preloadSceneResources(from manifest: SceneManifest, bundle: Bundle) throws -> Promise<Void> {
-        throw EmptyGraphicsApiError.unimplemented
+    func preloadSceneResources(from manifest: SceneManifest, bundle: Bundle) -> Promise<Void> {
+        return Promise<Void>(in: .main) { (_, reject) in
+            reject(EmptyGraphicsApiError.unimplemented)
+        }
     }
 
     func spriteComponent(name: String, inAtlas atlasName: String) throws -> TexturedMeshComponent {

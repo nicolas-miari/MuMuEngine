@@ -37,7 +37,7 @@ public class MainViewController: NSViewController {
             graphicsView.displayIfNeeded()
             self.view.addSubview(graphicsView)
              */
-            try Runtime.start(options: GameConfiguration(), ready: {
+            try Runtime.start(ready: {
 
             }, failure: {(error) in
                 

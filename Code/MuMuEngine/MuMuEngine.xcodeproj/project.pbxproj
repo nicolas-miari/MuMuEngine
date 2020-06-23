@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1F1C00D5245521EE00F03583 /* SceneManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1C00D4245521EE00F03583 /* SceneManager.swift */; };
-		1F1C00D6245521EE00F03583 /* SceneManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1C00D4245521EE00F03583 /* SceneManager.swift */; };
 		1F1C00D82455376E00F03583 /* Graphics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1C00D72455376E00F03583 /* Graphics.swift */; };
 		1F1C00D92455376E00F03583 /* Graphics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1C00D72455376E00F03583 /* Graphics.swift */; };
 		1F7B334F2444474000499C91 /* Promise+Catch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7B33472444474000499C91 /* Promise+Catch.swift */; };
@@ -741,7 +739,6 @@
 				1F8EA12E24078E62008921AB /* StateMachineComponent.swift in Sources */,
 				1F7B33532444474000499C91 /* Context.swift in Sources */,
 				1F8EA14024078E62008921AB /* Container.swift in Sources */,
-				1F1C00D5245521EE00F03583 /* SceneManager.swift in Sources */,
 				1F8EA16024078E62008921AB /* MetalUtilities.swift in Sources */,
 				1F8EA15024078E62008921AB /* Bootstrap.swift in Sources */,
 				1F8EA16224078E62008921AB /* MetalTexturedMesh.swift in Sources */,
@@ -800,7 +797,6 @@
 				1F1C00D92455376E00F03583 /* Graphics.swift in Sources */,
 				1F8EA13324078E62008921AB /* Blueprint.swift in Sources */,
 				1F8EA14524078E62008921AB /* Matrix.swift in Sources */,
-				1F1C00D6245521EE00F03583 /* SceneManager.swift in Sources */,
 				1F8EA15B24078E62008921AB /* Shaders.metal in Sources */,
 				1F8EA14324078E62008921AB /* Easing.swift in Sources */,
 				1F8EA16724078E62008921AB /* MetalGraphicsAPI.swift in Sources */,

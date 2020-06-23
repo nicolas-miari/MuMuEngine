@@ -29,9 +29,23 @@ public final class Runtime {
 
     // Runtime Properties
 
+    /**
+     An object that abstracts the graphics library used to load visual resources
+     and render game content. Currently, Apple's Metal is used under the wraps.
+     */
     let graphics: GraphicsAPI
 
+    /**
+     An object that abstracts the system timer, used to perform frame updates.
+     */
     let timeSource: TimeSource
+
+    /**
+     The bundle from which all game resources are loaded. normally the app's
+     main bundle, but a different bundle can be injected on instantiation for
+     e.g. unit testing.
+     */
+    let bundle: Bundle
 
     var view: View {
         return graphics.view
@@ -59,35 +73,38 @@ public final class Runtime {
 
     var playerControllerStates: [Player: PlayerControllerState] = [:]
 
-    // MARK: - Initialization
+    // MARK: - Initialization (Private)
 
-    /**
-     - parameter api: For dependency injection in unit tests. On normal
-     execution, leave empty and the default value of `nil` signals instantiating
-     the API specified in the configuration file.
-     */
-    private init(api: GraphicsAPI, timeSource: TimeSource) {
+    private init(bundle: Bundle, api: GraphicsAPI, timeSource: TimeSource) {
+        self.bundle = bundle
         self.graphics = api
         self.timeSource = timeSource
         playerControllerStates[.player1] = PlayerControllerState()
     }
 
     private init() {
+        self.bundle = .main
         self.graphics = EmptyGraphicsApi()
         self.timeSource = EmptyTimesource()
     }
 
-    static func start(options: GameConfiguration, ready: @escaping (() -> Void), failure: @escaping ((Error) -> Void)) throws {
+    // MARK: - Bootstrapping (App Launch)
 
-        let api = try options.createGraphicsApi()
-        let timeSource = options.createTimeSource()
+    /**
+     Bootstraps the engine runtime (creates shared instance) and loads initial
+     app scene.
+     */
+    static func start(options: GameConfiguration? = nil, bundle: Bundle = .main, ready: @escaping (() -> Void), failure: @escaping ((Error) -> Void)) throws {
 
-        self.shared = Runtime(api: api, timeSource: timeSource)
+        let configuration = try options ?? GameConfiguration.loadDefault()
+
+        let api = try configuration.createGraphicsApi()
+        let timeSource = configuration.createTimeSource()
+        self.shared = Runtime(bundle: bundle, api: api, timeSource: timeSource)
 
         shared.registerCustomCoders()
 
-        // Attempt loading inital scene
-
+        shared.loadScene(name: configuration.initialSceneName, onCompletion: .runImmediately)
     }
 
     /*
@@ -132,7 +149,6 @@ public final class Runtime {
 
     private(set) public var currentScene: Scene!
     private(set) public var nextScene: Scene!
-
     private(set) var currentTransition: Transition?
 
     enum LoadSceneResponse {
@@ -141,32 +157,27 @@ public final class Runtime {
 
         ///
         case runAfterTransition(effect: Transition.Effect, duration: TimeInterval)
-    }
 
-    /**
-     Loads the scene with the specified name from the resource bundle asynchronously. On completion, the passed
-     closure is executed. Return the appropriate value to signal to the runtime how to proceed with regards to
-     the just loaded scene.
-     */
-    func loadScene(name: String, bundle: Bundle = .main, completion: @escaping (() -> LoadSceneResponse), failure: @escaping ((Error) -> Void) = defaultFailureHandler) {
-        loadScene(name: name, bundle: bundle, completion: { (scene) in
-            switch completion() {
-            case .runImmediately:
-                self.run(scene)
-
-            case .runAfterTransition(let effect, let duration):
-                self.transition(to: scene, effect: effect, duration: duration)
-            }
-        }, failure: failure)
+        ///
+        case customAction(handler: ((Scene) -> Void))
     }
 
     /**
      Loads the scene with the specified name from the resource bundle asynchronously. On completion, the specified
      action is performed.
      */
-    func loadScene(name: String, bundle: Bundle = .main, onCompletion: LoadSceneResponse, failure: @escaping ((Error) -> Void) = defaultFailureHandler) {
-        loadScene(name: name, completion: { () -> Runtime.LoadSceneResponse in
-            return onCompletion
+    func loadScene(name: String, onCompletion: LoadSceneResponse, failure: @escaping ((Error) -> Void) = defaultFailureHandler) {
+        loadScene(name: name, completion: { [unowned self](scene) in
+            switch onCompletion {
+            case .runImmediately:
+                self.run(scene)
+
+            case .runAfterTransition(let effect, let duration):
+                self.transition(to: scene, effect: effect, duration: duration)
+
+            case .customAction(let handler):
+                handler(scene)
+            }
         }, failure: failure)
     }
 
@@ -175,7 +186,7 @@ public final class Runtime {
     func runScene(name: String, bundle: Bundle? = nil, loadCompletion: (() -> Void)? = nil, failure: @escaping ((Error) -> Void) = defaultFailureHandler) throws {
         // Instantiate the scene with the given name from the bundled resources.
 
-        loadScene(name: name, bundle: (bundle ?? .main),  completion: { (_) in
+        loadScene(name: name,  completion: { (_) in
             loadCompletion?()
 
         }, failure: failure)
@@ -275,30 +286,23 @@ public final class Runtime {
 
     // MARK: -
 
-    private func loadScene(name: String, bundle: Bundle = .main, completion: @escaping ((Scene) -> Void), failure: @escaping ((Error) -> Void) = defaultFailureHandler) {
-        loadSceneManifest(name: name, bundle: bundle, completion: { [unowned self](manifest) in
-            self.graphics.preloadSceneResources(from: manifest, bundle: bundle, completion: { [unowned self] in
+    private func loadScene(name: String, completion: @escaping ((Scene) -> Void), failure: @escaping ((Error) -> Void) = defaultFailureHandler) {
 
-                // Load Scene Data Proper
-                guard let path = bundle.path(forResource: name, ofType: sceneDataFileExtension) else {
-                    let error = RuntimeError.fileNotFound(fileName: name, type: .sceneData, bundleIdentifier: bundle.bundleIdentifier)
-                    return failure(error)
-                }
-                do {
-                    let data = try Data(contentsOf: URL(fileURLWithPath: path))
-                    let scene = try JSONDecoder().decode(Scene.self, from: data)
+        loadSceneManifest(name: name).then { [unowned self](manifest) -> (Promise<Void>) in
 
-                    completion(scene)
-                    self.onLoadScene(scene)
-                } catch {
-                    failure(error) // todo: Add a corrupted json scene to cover this path
-                }
-            }, failure: { (error) in
-                failure(error)
-            })
-        }, failure: { (error) in
+            return self.preloadSceneResources(from: manifest)
+
+        }.then { (_) -> (Promise<Scene>) in
+
+            return self.loadSceneContents(name: name)
+
+        }.then { (scene) -> (Void) in
+
+            completion(scene)
+
+        }.catch { (error) in
             failure(error)
-        })
+        }
     }
 
     private func onLoadScene(_ scene: Scene) {
@@ -342,6 +346,42 @@ public final class Runtime {
         } catch {
             failure(error) // todo: Add a corrupted json scene manifest to cover this path
         }
+    }
+
+    private func loadSceneManifest(name: String) -> Promise<SceneManifest> {
+        let promise = Promise<SceneManifest>(in: .background) { [unowned self](resolve, reject) in
+            guard let path = self.bundle.path(forResource: name, ofType: sceneManifestFileExtension) else {
+                throw RuntimeError.fileNotFound(fileName: name, type: .sceneManifest, bundleIdentifier: self.bundle.bundleIdentifier)
+            }
+            do {
+                let data = try Data(contentsOf: URL(fileURLWithPath: path))
+                let manifest = try JSONDecoder().decode(SceneManifest.self, from: data)
+                resolve(manifest)
+            } catch {
+                reject(error)
+            }
+        }
+        return promise
+    }
+
+    private func preloadSceneResources(from manifest: SceneManifest) -> Promise<Void> {
+        return graphics.preloadSceneResources(from: manifest, bundle: self.bundle)
+    }
+
+    private func loadSceneContents(name: String) -> Promise<Scene> {
+        let promise = Promise<Scene>(in: .background) { [unowned self](resolve, reject) in
+            guard let path = self.bundle.path(forResource: name, ofType: sceneDataFileExtension) else {
+                throw RuntimeError.fileNotFound(fileName: name, type: .sceneData, bundleIdentifier: self.bundle.bundleIdentifier)
+            }
+            do {
+                let data = try Data(contentsOf: URL(fileURLWithPath: path))
+                let scene = try JSONDecoder().decode(Scene.self, from: data)
+                resolve(scene)
+            } catch {
+                reject(error)
+            }
+        }
+        return promise
     }
 
     private func registerCustomCoders() {
