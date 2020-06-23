@@ -55,6 +55,6 @@ class SystemTimeSource: TimeSource {
 
 class EmptyTimesource: TimeSource {
     func update() -> TimeInterval {
-        // (...crickets...)
+        return 0.0
     }
 }
