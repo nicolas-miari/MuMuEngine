@@ -140,7 +140,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1F1C00D4245521EE00F03583 /* SceneManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneManager.swift; sourceTree = "<group>"; };
 		1F1C00D72455376E00F03583 /* Graphics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Graphics.swift; sourceTree = "<group>"; };
 		1F7B33472444474000499C91 /* Promise+Catch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Promise+Catch.swift"; sourceTree = "<group>"; };
 		1F7B33482444474000499C91 /* Promise+Then.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Promise+Then.swift"; sourceTree = "<group>"; };
@@ -268,7 +267,6 @@
 		1F8EA04924078A7D008921AB = {
 			isa = PBXGroup;
 			children = (
-				1F1C00D4245521EE00F03583 /* SceneManager.swift */,
 				1F8EA0E824078E62008921AB /* Common */,
 				1F8EA05524078A7D008921AB /* macOS */,
 				1F8EA07324078B04008921AB /* iOS */,

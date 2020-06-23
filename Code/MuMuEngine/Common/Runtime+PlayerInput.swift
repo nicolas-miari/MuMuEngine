@@ -187,4 +187,28 @@ extension Runtime {
             break
         }
     }
+
+    // MARK: - Controller Input
+
+    func setPadAxis(_ controllerAxis: ControllerAxis, to value: Float, for player: Player) {
+        switch controllerAxis {
+        case .x:
+            playerControllerStates[player]?.xAxis = value
+        case .y:
+            playerControllerStates[player]?.yAxis = value
+        }
+    }
+
+    func setButton(_ controllerButton: ControllerButton, pressed: Bool, for player: Player) {
+        switch controllerButton {
+        case .a:
+            playerControllerStates[player]?.buttonA = pressed
+        case .b:
+            playerControllerStates[player]?.buttonB = pressed
+        case .x:
+            playerControllerStates[player]?.buttonX = pressed
+        case .y:
+            playerControllerStates[player]?.buttonY = pressed
+        }
+    }
 }

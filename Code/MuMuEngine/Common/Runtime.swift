@@ -107,30 +107,6 @@ public final class Runtime {
         shared.loadScene(name: configuration.initialSceneName, onCompletion: .runImmediately)
     }
 
-    /*
-    static func start(options: [BootstrapOptionKey: Any]? = nil, readyHandler: (() -> Void)? = nil, failureHandler: @escaping ((Error) -> Void) = defaultFailureHandler) throws {
-        let bootstrap = try Bootstrap(options: options)
-
-        // Allocate singleton
-        self.shared = Runtime(api: bootstrap.graphicsAPI)
-
-        //
-        shared.registerCustomCoders()
-
-        // Attempt loading initial scene:
-        let bundle = options?[.bundle] as? Bundle ?? .main
-        shared.loadScene(name: bootstrap.initialSceneName, bundle: bundle,  completion: { () -> Runtime.LoadSceneResponse in
-            // Success; run scene and notify observer:
-            readyHandler?()
-            return .runImmediately
-
-        }, failure: {(error) in
-            DispatchQueue.main.async {
-                failureHandler(error)
-            }
-        })
-    }*/
-
     // MARK: - Hit Testing
 
     internal var lastNodeHit: Node?
@@ -260,30 +236,6 @@ public final class Runtime {
         }
     }
 
-    // MARK: - Controller Input
-
-    func setPadAxis(_ controllerAxis: ControllerAxis, to value: Float, for player: Player) {
-        switch controllerAxis {
-        case .x:
-            playerControllerStates[player]?.xAxis = value
-        case .y:
-            playerControllerStates[player]?.yAxis = value
-        }
-    }
-
-    func setButton(_ controllerButton: ControllerButton, pressed: Bool, for player: Player) {
-        switch controllerButton {
-        case .a:
-            playerControllerStates[player]?.buttonA = pressed
-        case .b:
-            playerControllerStates[player]?.buttonB = pressed
-        case .x:
-            playerControllerStates[player]?.buttonX = pressed
-        case .y:
-            playerControllerStates[player]?.buttonY = pressed
-        }
-    }
-
     // MARK: -
 
     private func loadScene(name: String, completion: @escaping ((Scene) -> Void), failure: @escaping ((Error) -> Void) = defaultFailureHandler) {
@@ -331,21 +283,6 @@ public final class Runtime {
 
     private func togglePauseGame() {
         // TODO: implement
-    }
-
-    private func loadSceneManifest(name: String, bundle: Bundle = .main, completion: @escaping ((SceneManifest) -> Void), failure: @escaping ((Error) -> Void) = defaultFailureHandler) {
-        guard let path = bundle.path(forResource: name, ofType: sceneManifestFileExtension) else {
-            let error = RuntimeError.fileNotFound(fileName: name, type: .sceneManifest, bundleIdentifier: bundle.bundleIdentifier)
-            return failure(error)
-        }
-        do {
-            let data = try Data(contentsOf: URL(fileURLWithPath: path))
-            let manifest = try JSONDecoder().decode(SceneManifest.self, from: data)
-
-            completion(manifest)
-        } catch {
-            failure(error) // todo: Add a corrupted json scene manifest to cover this path
-        }
     }
 
     private func loadSceneManifest(name: String) -> Promise<SceneManifest> {
