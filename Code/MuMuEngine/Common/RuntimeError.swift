@@ -8,32 +8,6 @@
 
 import Foundation
 
-enum ResourceFileType {
-    case gameConfiguration
-    case atlasMetadata
-    case sceneManifest
-    case sceneData
-    case animationData
-    case blueprintData
-
-    var localizedDescription: String {
-        switch self {
-        case .gameConfiguration:
-            return "Game Configuration"
-        case .atlasMetadata:
-            return "Atlas Metadata"
-        case .sceneManifest:
-            return "Scene Manifest"
-        case .sceneData:
-            return "Scene Data"
-        case .animationData:
-            return "Animation Data"
-        case .blueprintData:
-            return "Blueprint Data"
-        }
-    }
-}
-
 enum RuntimeError: Error {
 
     // MARK: - Runtime Initialization
@@ -75,7 +49,7 @@ enum RuntimeError: Error {
     case concurrentLoadSceneRequests
 }
 
-// MARK: - Use-Facing Messages
+// MARK: - User-Facing Messages
 
 extension RuntimeError: LocalizedError {
 
@@ -136,6 +110,40 @@ extension RuntimeError: LocalizedError {
 
         case .concurrentLoadSceneRequests:
             return "Attempted to load multiple scenes concurrently."
+        }
+    }
+}
+
+// MARK: - Supporting Types
+
+enum ResourceFileType {
+
+    case gameConfiguration
+
+    case atlasMetadata
+
+    case sceneManifest
+
+    case sceneData
+
+    case animationData
+
+    case blueprintData
+
+    var localizedDescription: String {
+        switch self {
+        case .gameConfiguration:
+            return "Game Configuration"
+        case .atlasMetadata:
+            return "Atlas Metadata"
+        case .sceneManifest:
+            return "Scene Manifest"
+        case .sceneData:
+            return "Scene Data"
+        case .animationData:
+            return "Animation Data"
+        case .blueprintData:
+            return "Blueprint Data"
         }
     }
 }

@@ -24,7 +24,7 @@ public class Node: Codable, Equatable {
 
     internal(set) public var clearColor: Color = Color(red: 0.3, green: 0.4, blue: 1, alpha: 1) {
         didSet {
-            print("Did Set")
+            //print("Did Set")
         }
     }
 

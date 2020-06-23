@@ -69,7 +69,7 @@ class Animation: Codable {
             accum += descriptor.duration
             return retVal
         })
-        Swift.print("Successfully decoded Animation")
+        // Swift.print("Successfully decoded Animation")
     }
 
     func encode(to encoder: Encoder) throws {
@@ -87,7 +87,7 @@ class Animation: Codable {
             let mesh = try api.spriteComponent(name: sourceNames[descriptor.index], inAtlas: atlasName)
             return AnimationFrame(mesh: mesh, duration: descriptor.duration)
         }
-        Swift.print("Successfully loaded Animation Runtime Resources")
+        // Swift.print("Successfully loaded Animation Runtime Resources")
     }
 
     func setName(_ name: String) {

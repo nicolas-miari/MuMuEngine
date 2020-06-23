@@ -71,7 +71,7 @@ class State: Codable {
                 // RENDERS NOTHING (INVISIBLE STATE)
                 self.renderable = nil
             }
-            Swift.print("Successfully decoded State")
+            // Swift.print("Successfully decoded State")
         } catch {
             throw error
         }

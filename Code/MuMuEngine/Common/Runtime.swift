@@ -287,7 +287,7 @@ public final class Runtime {
 
     private func loadSceneManifest(name: String) -> Promise<SceneManifest> {
         let promise = Promise<SceneManifest>(in: .background) { [unowned self](resolve, reject) in
-            guard let path = self.bundle.path(forResource: name, ofType: sceneManifestFileExtension) else {
+            guard let path = self.bundle.path(forResource: name, ofType: .sceneManifestFileExtension) else {
                 throw RuntimeError.fileNotFound(fileName: name, type: .sceneManifest, bundleIdentifier: self.bundle.bundleIdentifier)
             }
             do {
@@ -307,7 +307,7 @@ public final class Runtime {
 
     private func loadSceneContents(name: String) -> Promise<Scene> {
         let promise = Promise<Scene>(in: .background) { [unowned self](resolve, reject) in
-            guard let path = self.bundle.path(forResource: name, ofType: sceneDataFileExtension) else {
+            guard let path = self.bundle.path(forResource: name, ofType: .sceneDataFileExtension) else {
                 throw RuntimeError.fileNotFound(fileName: name, type: .sceneData, bundleIdentifier: self.bundle.bundleIdentifier)
             }
             do {
@@ -322,22 +322,27 @@ public final class Runtime {
     }
 
     private func registerCustomCoders() {
-        // Register event types for encoding/decoding:
+        // Event types:
         Container.register(PointInputEvent.self)
         Container.register(AnimationCompleteEvent.self)
         Container.register(MessageReceivedEvent.self)
 
-        // Register action types for encoding/decoding:
+        // Action types:
         Container.register(StateTransitionAction.self)
         Container.register(SceneTransitionAction.self)
         Container.register(SendMessageAction.self)
         Container.register(RemoveNodeAction.self)
 
-        // Register node Component types for encoding/decoding:
+        // Component types:
         Container.register(StateMachineComponent.self)
         Container.register(HitBoxComponent.self)
     }
 }
 
-let sceneDataFileExtension = "scenedata"
-let sceneManifestFileExtension = "scenemanifest"
+// MARK: - Supporting Extensions
+
+private extension String {
+
+    static let sceneDataFileExtension = "scenedata"
+    static let sceneManifestFileExtension = "scenemanifest"
+}
