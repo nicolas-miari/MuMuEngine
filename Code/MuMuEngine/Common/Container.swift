@@ -9,13 +9,15 @@
 import Foundation
 
 /**
- Adds heterogeneity support for the Codable protocols.
+ Helper struct. Builds on the functionality of the Codable protocol to enable
+ encoding and decoding between heterogeneous JSON files and Swift types.
 
- The game resources are nested, heterogeneous JSON files: the various nested
- dictionaries should be decoded to various different types. Out of the box it is
- not possible to automagically decode these dictionaries using the Codable
- protocols alone. To overcome this limitation, at every level of the JSON, each
- component represented as a dictionary adopts a common structure:
+ The game resources are nested, heterogeneous JSON files of variable structure:
+ the various nested dictionaries should be decoded into different Swift types.
+ Out of the box, it is not possible to automagically decode these dictionaries
+ using the Codable protocols alone. To overcome this limitation, at every level
+ of the JSON, each component represented as a dictionary adopts a common
+ structure:
 
      {
          type: "SomeType",

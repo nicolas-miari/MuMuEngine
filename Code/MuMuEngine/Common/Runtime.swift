@@ -16,9 +16,14 @@ import GameKit
 public final class Runtime {
 
     /**
-     Non-optional, to avoid unwrapping overhead. However, the initial value is a
-     non-functional instance, and attmepting to use it will result in an error:
-     call `start()` first.
+     Even though proper initialization of the runtime environment (load resource
+     files, initialaize graphics API, etc.) is very much failable, the global
+     reference to the runtime object is explicitly made a non-optional property,
+     in order to avoid the repeated overhead of optional unwrapping.
+
+     However, the initial value set immediately afyter launch is a
+     non-functional instance, and attmepting to use it will result in an error.
+     Call the method `start()` once before using the shared instance.
      */
     private(set) public static var shared = Runtime()
 
@@ -305,17 +310,17 @@ public final class Runtime {
 
         for (index, controller) in gameControllers.enumerated() {
             controller.controllerPausedHandler = { (_) in
-                Runtime.shared.togglePauseGame()
+                self.togglePauseGame()
             }
             guard let player = Player(rawValue: index) else {
                 continue
             }
 
             if let gamepad = controller.extendedGamepad {
-                Runtime.shared.setupValueChangedHandlers(for: gamepad, for: player)
+                self.setupValueChangedHandlers(for: gamepad, for: player)
 
             } else if let microGamepad = controller.microGamepad {
-                Runtime.shared.setupValueChangedHandlers(for: microGamepad, for: player)
+                self.setupValueChangedHandlers(for: microGamepad, for: player)
             }
         }
     }

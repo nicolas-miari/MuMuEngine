@@ -270,6 +270,7 @@
 		1F8EA04924078A7D008921AB = {
 			isa = PBXGroup;
 			children = (
+				1F1C00D4245521EE00F03583 /* SceneManager.swift */,
 				1F8EA0E824078E62008921AB /* Common */,
 				1F8EA05524078A7D008921AB /* macOS */,
 				1F8EA07324078B04008921AB /* iOS */,
@@ -327,7 +328,6 @@
 		1F8EA0E824078E62008921AB /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				1F1C00D4245521EE00F03583 /* SceneManager.swift */,
 				1F8F9A0E24404DDF00E79EEE /* System.swift */,
 				1F8F9A11244058B300E79EEE /* GameConfiguration.swift */,
 				1F8EA0FC24078E62008921AB /* Runtime.swift */,
