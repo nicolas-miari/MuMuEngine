@@ -43,7 +43,7 @@ class GameConfiguration: Codable {
 
     func createGraphicsApi() throws -> GraphicsAPI {
         let screenSize: CGSize = try { () throws -> CGSize in
-            if let size = System.viewNativeSize {
+            if let size = System.viewPointSize {
                 // (iOS)
                 return size
             } else if let size = windowSize {

@@ -31,12 +31,6 @@ public class MainViewController: NSViewController {
     public override func viewWillAppear() {
         super.viewWillAppear()
         do {
-            /*
-            try Engine.start()
-            let graphicsView = Engine.shared.view
-            graphicsView.displayIfNeeded()
-            self.view.addSubview(graphicsView)
-             */
             try Runtime.start(ready: {
 
             }, failure: {(error) in

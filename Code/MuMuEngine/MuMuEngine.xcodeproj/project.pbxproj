@@ -124,6 +124,13 @@
 		1F8F9A0F24404DDF00E79EEE /* System.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8F9A0E24404DDF00E79EEE /* System.swift */; };
 		1F8F9A1024404F6800E79EEE /* System.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8F9A0E24404DDF00E79EEE /* System.swift */; };
 		1F8F9A12244058B300E79EEE /* GameConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8F9A11244058B300E79EEE /* GameConfiguration.swift */; };
+		1FB256E824A2C795007E8AE7 /* Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7B334A2444474000499C91 /* Promise.swift */; };
+		1FB256E924A2C797007E8AE7 /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7B334B2444474000499C91 /* Context.swift */; };
+		1FB256EA24A2C79C007E8AE7 /* Promise+Always.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7B33492444474000499C91 /* Promise+Always.swift */; };
+		1FB256EB24A2C79C007E8AE7 /* Promise+Catch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7B33472444474000499C91 /* Promise+Catch.swift */; };
+		1FB256EC24A2C79C007E8AE7 /* Promise+Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7B334D2444474000499C91 /* Promise+Observer.swift */; };
+		1FB256ED24A2C79C007E8AE7 /* Promise+State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7B334C2444474000499C91 /* Promise+State.swift */; };
+		1FB256EE24A2C79C007E8AE7 /* Promise+Then.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7B33482444474000499C91 /* Promise+Then.swift */; };
 		1FCE943D24A0861B00A010D6 /* Runtime+Mouse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCE943C24A0861B00A010D6 /* Runtime+Mouse.swift */; };
 		1FCE943F24A0865300A010D6 /* Runtime+Touch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCE943E24A0865300A010D6 /* Runtime+Touch.swift */; };
 		1FD2C2B42440759000FF671F /* GameConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8F9A11244058B300E79EEE /* GameConfiguration.swift */; };
@@ -756,11 +763,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FB256E924A2C797007E8AE7 /* Context.swift in Sources */,
 				1F8EA13B24078E62008921AB /* Runtime+PlayerInput.swift in Sources */,
 				1F8EA12724078E62008921AB /* Scene.swift in Sources */,
 				1F8EA13124078E62008921AB /* HitBoxComponent.swift in Sources */,
 				1F8EA14924078E62008921AB /* Codable+Extensions.swift in Sources */,
 				1FD2C2B42440759000FF671F /* GameConfiguration.swift in Sources */,
+				1FB256EA24A2C79C007E8AE7 /* Promise+Always.swift in Sources */,
 				1F8EA12124078E62008921AB /* Event.swift in Sources */,
 				1F8EA13F24078E62008921AB /* Time.swift in Sources */,
 				1F8EA13D24078E62008921AB /* Runtime.swift in Sources */,
@@ -771,6 +780,7 @@
 				1F8EA19524078EDC008921AB /* SystemAlert.swift in Sources */,
 				1F8EA13524078E62008921AB /* RenderSet.swift in Sources */,
 				1F8EA12524078E62008921AB /* Action.swift in Sources */,
+				1FB256EC24A2C79C007E8AE7 /* Promise+Observer.swift in Sources */,
 				1F8EA16B24078E62008921AB /* Vertex.swift in Sources */,
 				1F8EA14B24078E62008921AB /* CGGeometry+Extensions.swift in Sources */,
 				1F8F9A1024404F6800E79EEE /* System.swift in Sources */,
@@ -783,6 +793,7 @@
 				1F8EA16524078E62008921AB /* MetalTileSet.swift in Sources */,
 				1F8EA15924078E62008921AB /* MetalTextureAtlas.swift in Sources */,
 				1F8EA19424078EDC008921AB /* MainView.swift in Sources */,
+				1FB256E824A2C795007E8AE7 /* Promise.swift in Sources */,
 				1F8EA16924078E62008921AB /* Transition.swift in Sources */,
 				1F8EA15724078E62008921AB /* MetalRenderer.swift in Sources */,
 				1F8EA15D24078E62008921AB /* MTLClearColor+Extensions.swift in Sources */,
@@ -790,6 +801,7 @@
 				1F8EA16D24078E62008921AB /* RuntimeError.swift in Sources */,
 				1FCE943F24A0865300A010D6 /* Runtime+Touch.swift in Sources */,
 				1F8EA14F24078E62008921AB /* GraphicsAPI.swift in Sources */,
+				1FB256EE24A2C79C007E8AE7 /* Promise+Then.swift in Sources */,
 				1F8EA12D24078E62008921AB /* State.swift in Sources */,
 				1F8EA14D24078E62008921AB /* Dictionary+Extensions.swift in Sources */,
 				1F1C00D92455376E00F03583 /* Graphics.swift in Sources */,
@@ -802,6 +814,8 @@
 				1F8EA17124078E62008921AB /* TileSet.swift in Sources */,
 				1F8EA12F24078E62008921AB /* StateMachineComponent.swift in Sources */,
 				1F8EA14124078E62008921AB /* Container.swift in Sources */,
+				1FB256ED24A2C79C007E8AE7 /* Promise+State.swift in Sources */,
+				1FB256EB24A2C79C007E8AE7 /* Promise+Catch.swift in Sources */,
 				1F8EA16124078E62008921AB /* MetalUtilities.swift in Sources */,
 				1F8EA15124078E62008921AB /* Bootstrap.swift in Sources */,
 				1F8EA16324078E62008921AB /* MetalTexturedMesh.swift in Sources */,

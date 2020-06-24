@@ -13,25 +13,18 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-
-        let screenSize = UIScreen.main.bounds.size
-        let scale = UIScreen.main.scale
-
-        // Initialize graphics API and pass it to the runtime, starting it
-
         do {
-            let options: [BootstrapOptionKey: Any] = [
-                .forceViewSize: screenSize,
-                .scaleFactor: scale
-            ]
+            try Runtime.start(ready: {
 
-            try Runtime.start(options: options)
+            }, failure: {(error) in
 
+            })
             let graphicsView = Runtime.shared.view
 
             graphicsView.isUserInteractionEnabled = false
+            graphicsView.translatesAutoresizingMaskIntoConstraints = false
             self.view.addSubview(graphicsView)
+
         } catch {
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [unowned self] in
                 let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
